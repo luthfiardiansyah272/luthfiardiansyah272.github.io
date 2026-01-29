@@ -1,188 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luthfi Ardiansyah | Electrical & IoT Engineer</title>
+  <meta charset="utf-8">
+  <title>Luthfi Ardianysah | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
   <style>
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #f5f7fa;
-      color: #2c2c2c;
-      line-height: 1.6;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.7;
     }
     header {
-      background: linear-gradient(135deg, #0d6efd, #003c8f);
-      color: #fff;
-      padding: 60px 20px;
+      background: linear-gradient(120deg, #3f87a6, #ebf8e1);
+      padding: 100px 20px;
       text-align: center;
     }
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 42px;
+      margin-bottom: 10px;
     }
     header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      opacity: 0.95;
+      font-size: 18px;
+      font-weight: 300;
     }
     section {
+      padding: 70px 20px;
       max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
     }
     h2 {
-      color: #0d6efd;
-      border-bottom: 2px solid #e0e6ed;
-      padding-bottom: 8px;
-      margin-bottom: 25px;
+      font-size: 30px;
+      margin-bottom: 30px;
+      text-align: center;
     }
-    .card {
+    .about, .contact {
+      text-align: center;
+    }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .box {
       background: #fff;
-      padding: 25px;
+      padding: 30px;
       border-radius: 10px;
-      margin-bottom: 25px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 8px;
-    }
-    .job-title {
-      font-weight: bold;
-      font-size: 1.05rem;
-    }
-    .job-period {
-      font-size: 0.9rem;
-      color: #666;
+    .box h3 {
       margin-bottom: 10px;
     }
     footer {
-      background: #1f1f1f;
-      color: #fff;
+      background: #222;
+      color: #ccc;
       text-align: center;
-      padding: 25px 10px;
-      font-size: 0.9rem;
+      padding: 20px;
+      font-size: 14px;
     }
     a {
-      color: #0d6efd;
+      color: #3f87a6;
       text-decoration: none;
     }
   </style>
 </head>
+
 <body>
 
+<!-- HERO -->
 <header>
-  <h1>Luthfi Ardiansyah</h1>
-  <p>Electrical Engineering Graduate | IoT & Digital Innovation Engineer</p>
-  <p>Lampung, Indonesia · <a href="mailto:luthfiardiansyah272@gmail.com" style="color:#fff;">luthfiardiansyah272@gmail.com</a></p>
+  <h1>Luthfi Ardianysah</h1>
+  <p>IoT Support · Reliability & Maintenance · Data Analysis</p>
 </header>
 
+<!-- ABOUT -->
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    Electrical Engineering graduate with hands-on experience in IoT systems,
+    maintenance reliability, and operational efficiency.
+    Strong interest in data-driven maintenance improvement,
+    sustainability, and predictive maintenance.
+  </p>
+</section>
+
+<!-- SKILLS -->
 <section>
-  <h2>Professional Summary</h2>
-  <div class="card">
-    <p>
-      Motivated Electrical Engineering graduate with hands-on experience in energy, agribusiness, and digital innovation.
-      Skilled in project coordination, process improvement, and cross-functional collaboration. Proven ability to
-      analyze operational data, generate insights, and drive data-informed decisions, with strong leadership,
-      problem-solving, and communication skills.
-    </p>
+  <h2>Core Skills</h2>
+  <div class="skills">
+    <div class="box">
+      <h3>IoT Systems</h3>
+      <p>
+        ESP32, sensors, relay, hour meter,
+        basic monitoring and data logging for industrial equipment.
+      </p>
+    </div>
+    <div class="box">
+      <h3>Maintenance Reliability</h3>
+      <p>
+        MTTR, MTBF, TPM analysis,
+        failure trend monitoring and improvement planning.
+      </p>
+    </div>
+    <div class="box">
+      <h3>Data Analysis</h3>
+      <p>
+        Python, Excel, Power BI
+        for operational, quality, and maintenance data analysis.
+      </p>
+    </div>
+    <div class="box">
+      <h3>Predictive Maintenance</h3>
+      <p>
+        Basic AI and anomaly detection
+        using historical machine failure data.
+      </p>
+    </div>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section>
-  <h2>Education</h2>
-  <div class="card">
-    <p class="job-title">Bachelor's Degree in Electrical Engineering</p>
-    <p class="job-period">Universitas Lampung · November 2023 · GPA 3.50</p>
-    <p><strong>Thesis:</strong> Smart Traffic Light Using Image Processing and Fuzzy Method</p>
+  <h2>Selected Projects</h2>
+  <div class="projects">
+    <div class="box">
+      <h3>Predictive Maintenance for Industrial Units</h3>
+      <p>
+        Analysis of historical machine failure data
+        to identify failure patterns,
+        reduce downtime, and optimize maintenance scheduling.
+      </p>
+    </div>
+    <div class="box">
+      <h3>Operational & Quality Dashboard</h3>
+      <p>
+        Dashboard to monitor MTTR, MTBF, and defect rate
+        to support data-driven operational decisions.
+      </p>
+    </div>
+    <div class="box">
+      <h3>IoT Hour Meter Monitoring</h3>
+      <p>
+        IoT-based monitoring of machine running hours
+        for preventive maintenance planning.
+      </p>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Work Experience</h2>
-
-  <div class="card">
-    <p class="job-title">IoT Development – Digital Innovation</p>
-    <p class="job-period">PT Great Giant Pineapple · September 2024 – Present</p>
-    <ul>
-      <li>Supported cross-functional innovation projects to improve operational performance and digital transformation.</li>
-      <li>Implemented TPM systems across spraying, irrigation, and agricultural units.</li>
-      <li>Managed VAT projects improving equipment utilization, fuel control, and operator performance.</li>
-      <li>Conducted sensor analysis and test cases to ensure system accuracy and readiness.</li>
-      <li>Supported development of QCPP operational monitoring application.</li>
-      <li>Prepared user guides, training materials, and satisfaction analysis.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <p class="job-title">Energy Transaction Intern</p>
-    <p class="job-period">PT ULP Karang · August 2022 – December 2022</p>
-    <ul>
-      <li>Coordinated inspection of 50+ kWh meters weekly for compliance and accuracy.</li>
-      <li>Collaborated on replacement of 15+ units daily to improve efficiency.</li>
-      <li>Reported inspection data and provided maintenance recommendations.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <p class="job-title">Wedding Organizer Crew</p>
-    <p class="job-period">Samara Production · January 2022 – December 2022</p>
-    <ul>
-      <li>Managed end-to-end wedding event execution for 200+ guests.</li>
-      <li>Supervised vendors and resolved on-site operational issues.</li>
-      <li>Ensured alignment with client vision, budget, and expectations.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Organization & Laboratory Experience</h2>
-
-  <div class="card">
-    <p class="job-title">Control Laboratory Assistant</p>
-    <p class="job-period">Universitas Lampung · September 2021 – September 2023</p>
-    <ul>
-      <li>Supervised PLC, PID, and PWM control experiments for 40+ students.</li>
-      <li>Guided 100+ students in basic control laboratory sessions.</li>
-      <li>Developed learning modules and experiment guidelines.</li>
-      <li>Managed lab scheduling, equipment, and troubleshooting.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <p class="job-title">Staff – HIMATRO</p>
-    <p class="job-period">January 2020 – December 2020</p>
-    <ul>
-      <li>Led community empowerment project implementing solar-powered lamps.</li>
-      <li>Organized technology workshops and seminars for 100+ participants.</li>
-      <li>Organized photography and videography for Himatro Arts Festival webinar.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Skills & Certifications</h2>
-  <div class="card">
-    <p><strong>Technical Skills:</strong> Python, Matlab, PLC, AutoCAD, IoT Systems, Electrical Troubleshooting</p>
-    <p><strong>Data & QA:</strong> Sensor Data Analysis, Test Case Creation, QA Validation, Data Reporting</p>
-    <p><strong>Tools:</strong> Microsoft Office, Google Workspace, Trello, Odoo, Canva, Draw.io</p>
-    <p><strong>Certifications:</strong></p>
-    <ul>
-      <li>Artificial Intelligence Mastery Program – Orbit Future Academy</li>
-      <li>PCAP: Programming Essentials in Python – Cisco Networking Academy</li>
-      <li>Data Analytics Essentials – Cisco Networking Academy</li>
-      <li>Ahli K3 Umum – Certified by KEMENAKER RI</li>
-    </ul>
-    <p><strong>Languages:</strong> Indonesian (Native), English (Working Proficiency)</p>
-  </div>
+<!-- CONTACT -->
+<section class="contact">
+  <h2>Contact</h2>
+  <p>
+    Email: luthfiardiansyah272@gmail.com<br>
+    LinkedIn:
+    <a href="https://linkedin.com/in/luthfiardiansyah272" target="_blank">
+      linkedin.com/in/luthfiardiansyah272
+    </a><br>
+    GitHub:
+    <a href="https://github.com/luthfiardiansyah272" target="_blank">
+      github.com/luthfiardiansyah272
+    </a>
+  </p>
 </section>
 
 <footer>
-  <p>© 2026 Luthfi Ardiansyah · LinkedIn: <a href="https://www.linkedin.com/in/luthfiardiansyah272" style="color:#9ecbff;">luthfiardiansyah272</a></p>
+  © 2026 Luthfi Ardianysah — Portfolio
 </footer>
 
 </body>
