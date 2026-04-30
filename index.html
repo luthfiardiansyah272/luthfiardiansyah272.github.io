@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luthfi Ardiansyah – Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1F4E79;
+      --blue: #2E74B5;
+      --light-blue: #DEEAF1;
+      --text: #1a1a2e;
+      --muted: #555;
+      --bg: #f8fafc;
+      --white: #fff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(31,78,121,0.97);
+      backdrop-filter: blur(8px);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 2rem; height: 60px;
+    }
+    nav .logo { color: var(--white); font-weight: 700; font-size: 1.1rem; letter-spacing: 1px; }
+    nav ul { list-style: none; display: flex; gap: 1.8rem; }
+    nav ul a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color .2s; }
+    nav ul a:hover { color: var(--white); }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #16375a 60%, #0d2137 100%);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 80px 2rem 2rem;
+    }
+    .hero-inner { max-width: 700px; }
+    .avatar {
+      width: 110px; height: 110px; border-radius: 50%;
+      background: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem; color: var(--white); font-weight: 700;
+      margin: 0 auto 1.5rem;
+      border: 4px solid rgba(255,255,255,0.2);
+    }
+    #hero h1 { color: var(--white); font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: 1px; }
+    #hero .tagline { color: rgba(255,255,255,0.75); font-size: 1rem; margin: 0.6rem 0 1.5rem; }
+    .contact-bar { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-bottom: 2rem; }
+    .contact-bar a, .contact-bar span {
+      color: rgba(255,255,255,0.85); font-size: 0.85rem; text-decoration: none;
+      background: rgba(255,255,255,0.1); padding: 0.35rem 0.9rem; border-radius: 20px;
+      transition: background .2s;
+    }
+    .contact-bar a:hover { background: rgba(255,255,255,0.2); }
+    .btn-primary {
+      display: inline-block; background: var(--blue); color: var(--white);
+      padding: 0.7rem 2rem; border-radius: 6px; text-decoration: none;
+      font-weight: 600; font-size: 0.9rem; transition: background .2s;
+    }
+    .btn-primary:hover { background: #1a5a9a; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .section-title {
+      font-size: 1.5rem; font-weight: 700; color: var(--navy);
+      border-bottom: 3px solid var(--blue); padding-bottom: 0.5rem;
+      margin-bottom: 2.5rem; display: inline-block;
+    }
+
+    /* SUMMARY */
+    #summary { background: var(--white); }
+    #summary p { color: var(--muted); font-size: 1rem; max-width: 780px; margin-bottom: 1rem; }
+
+    /* EXPERIENCE */
+    #experience { background: var(--bg); }
+    .exp-card {
+      background: var(--white); border-radius: 10px; padding: 1.5rem;
+      margin-bottom: 1.5rem; border-left: 4px solid var(--blue);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; }
+    .exp-header h3 { font-size: 1rem; font-weight: 700; color: var(--text); }
+    .exp-header .date { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+    .exp-role { color: var(--blue); font-size: 0.88rem; font-style: italic; margin: 0.2rem 0 0.8rem; }
+    .exp-card ul { padding-left: 1.2rem; }
+    .exp-card ul li { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.35rem; }
+
+    /* PROJECTS */
+    #projects { background: var(--white); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .project-card {
+      background: var(--bg); border-radius: 10px; padding: 1.5rem;
+      border-top: 4px solid var(--blue); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .project-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .project-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.8rem; }
+    .project-card ul { padding-left: 1.1rem; }
+    .project-card ul li { font-size: 0.83rem; color: var(--muted); margin-bottom: 0.3rem; }
+    .highlight { color: var(--blue); font-weight: 600; }
+
+    /* SKILLS */
+    #skills { background: var(--bg); }
+    .skills-table { width: 100%; border-collapse: collapse; }
+    .skills-table td { padding: 0.75rem 1rem; font-size: 0.88rem; border: 1px solid #e2e8f0; }
+    .skills-table td:first-child {
+      background: var(--light-blue); color: var(--navy); font-weight: 700;
+      width: 160px; white-space: nowrap;
+    }
+    .skills-table td:last-child { color: var(--muted); }
+
+    /* EDUCATION */
+    #education { background: var(--white); }
+    .edu-card {
+      background: var(--bg); border-radius: 10px; padding: 1.5rem;
+      border-left: 4px solid var(--navy); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .edu-card h3 { font-size: 1rem; font-weight: 700; }
+    .edu-card .degree { color: var(--blue); font-style: italic; font-size: 0.9rem; margin: 0.2rem 0; }
+    .edu-card .meta { font-size: 0.83rem; color: var(--muted); margin-top: 0.5rem; }
+
+    /* CERTIFICATIONS */
+    #certifications { background: var(--bg); }
+    .cert-list { list-style: none; }
+    .cert-list li {
+      background: var(--white); border-radius: 8px; padding: 0.9rem 1.2rem;
+      margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--muted);
+      border-left: 3px solid var(--blue); box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    /* ORGANIZATION */
+    #organization { background: var(--white); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.7);
+      text-align: center; padding: 2rem; font-size: 0.85rem;
+    }
+    footer a { color: rgba(255,255,255,0.9); }
+
+    @media (max-width: 600px) {
+      nav ul { gap: 1rem; }
+      .exp-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">LA</div>
+  <ul>
+    <li><a href="#summary">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certs</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="avatar">LA</div>
+    <h1>Luthfi Ardiansyah</h1>
+    <p class="tagline">Production Engineer &nbsp;|&nbsp; Digital Innovation &nbsp;|&nbsp; FMCG Agribusiness</p>
+    <div class="contact-bar">
+      <span>📞 +62 896-3799-9194</span>
+      <a href="https://linkedin.com/in/luthfiardiansyah272" target="_blank">🔗 LinkedIn</a>
+      <span>📍 Lampung, Indonesia</span>
+    </div>
+    <a href="https://linkedin.com/in/luthfiardiansyah272" target="_blank" class="btn-primary">Connect on LinkedIn</a>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section id="summary">
+  <div class="container">
+    <span class="section-title">Professional Summary</span>
+    <p>Electrical Engineering graduate with proven experience in production system digitalization, equipment reliability, and maintenance engineering within FMCG agribusiness operations. Demonstrated impact in cost reduction exceeding <strong>IDR 1.2B/year</strong>, multi-site system deployment, and TPM implementation across multiple business units.</p>
+    <p>Strong in systems thinking, problem solving, and operational execution — with hands-on involvement from development and pilot through to full implementation. Highly driven to grow as a Production or Maintenance Engineer, with a focus on operational excellence and continuous improvement.</p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <span class="section-title">Work Experience</span>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <h3>PT Great Giant Pineapple (Great Giant Foods)</h3>
+        <span class="date">July 2025 – Present</span>
+      </div>
+      <p class="exp-role">Operational Smart Machinery – Production System Implementation & Operational Execution</p>
+      <ul>
+        <li>Involved in end-to-end production system implementation, from requirement gathering to operational monitoring.</li>
+        <li>Collected and analyzed user requirements within business processes, identifying improvement opportunities in plantation operations.</li>
+        <li>Coordinated with Business Analyst team to align operational needs with system development and expected business benefits.</li>
+        <li>Installed and configured sensor-based monitoring systems for real-time operational tracking.</li>
+        <li>Conducted User Acceptance Testing (UAT) to ensure system alignment with operational and quality requirements.</li>
+        <li>Acted as liaison between technical team and plantation users, ensuring effective communication of system updates.</li>
+        <li>Monitored system performance across 4 plantation groups, ensuring reliability and operational effectiveness.</li>
+        <li>Delivered user training and system socialization, ensuring successful adoption of digital systems.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <h3>PT Great Giant Pineapple (Great Giant Foods)</h3>
+        <span class="date">September 2024 – June 2025</span>
+      </div>
+      <p class="exp-role">Internship – Digital Innovation</p>
+      <ul>
+        <li>Gained hands-on exposure to production digitalization initiatives, supporting requirement gathering, system testing, and user coordination across plantation operations.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <h3>PT PLN ULP Tanjung Karang</h3>
+        <span class="date">August 2022 – December 2022</span>
+      </div>
+      <p class="exp-role">Intern – Energy Transaction (Kampus Merdeka)</p>
+      <ul>
+        <li>Assisted field inspections of electricity meters to ensure operational accuracy and compliance.</li>
+        <li>Supported coordination of daily operational activities with internal teams.</li>
+        <li>Compiled inspection reports as input for supervisory review and follow-up.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <span class="section-title">Key Projects</span>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>🚜 VAT Boomsprayer – Pineapple Plantations</h3>
+        <ul>
+          <li>Implemented Vehicle Activity Tracking (VAT) on 20 operational boomsprayer units.</li>
+          <li class="highlight">Achieved ~IDR 1.2B/year in cost savings by replacing ~20 manual monitoring staff.</li>
+          <li>Transitioned operations to paperless, mobile-based monitoring systems.</li>
+          <li>Enhanced data-driven decision-making through real-time operational tracking.</li>
+          <li>Supported TPM execution via accurate and timely operational data.</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <h3>🌿 VAT Martignani – Banana Plantations</h3>
+        <ul>
+          <li>Expanded VAT system to Martignani units (development and pilot stage).</li>
+          <li>Adjusted sensor configuration to match specific equipment characteristics.</li>
+          <li>Performed testing, validation, and troubleshooting to prepare for larger-scale rollout.</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <h3>🔧 TPM Implementation – 4 Plantation Groups</h3>
+        <ul>
+          <li>Supported TPM execution across Boomsprayer, Martignani, Irrigation, and Guava business units.</li>
+          <li>Contributed to reduction in equipment breakdown incidents and improvement in operational reliability.</li>
+          <li>Strengthened preventive maintenance monitoring to maximize unit utilization performance.</li>
+          <li>Supported TPM Predictive Maintenance: spare part lifecycle monitoring and preventive replacement planning.</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <h3>💧 Tracking Tanky Supply System</h3>
+        <ul>
+          <li>Supported implementation of a tracking system across 10 operational units to enforce standardized 3-minute solution mixing compliance.</li>
+          <li>Improved solution homogeneity and quality control through enforced agitation monitoring.</li>
+          <li>Reduced risk of uneven chemical concentration and enhanced spraying consistency.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <span class="section-title">Skills & Tools</span>
+    <table class="skills-table">
+      <tr>
+        <td>Technical</td>
+        <td>Production System Implementation, Sensor-Based Monitoring, PLC, PWM, PID Control, UAT, TPM</td>
+      </tr>
+      <tr>
+        <td>Tools & Software</td>
+        <td>Odoo, Python, VS Code, Google Colab, Canva, Figma, MS Office (Word, Excel, PowerPoint)</td>
+      </tr>
+      <tr>
+        <td>Soft Skills</td>
+        <td>Cross-Functional Collaboration, Problem Solving, Operational Execution, Performance Monitoring, User Training</td>
+      </tr>
+      <tr>
+        <td>Languages</td>
+        <td>Indonesian (Native) &nbsp;|&nbsp; English (Professional Working Proficiency)</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <span class="section-title">Education</span>
+    <div class="edu-card">
+      <h3>Universitas Lampung</h3>
+      <p class="degree">Bachelor's Degree in Electrical Engineering</p>
+      <p class="meta">August 2019 – November 2023 &nbsp;|&nbsp; GPA: 3.50 / 4.00</p>
+      <p class="meta" style="margin-top:0.4rem;font-style:italic;">Thesis: Smart Traffic Light Using Image Processing and Fuzzy Logic Method</p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <span class="section-title">Certifications & Training</span>
+    <ul class="cert-list">
+      <li>🏅 <strong>Ahli K3 Umum</strong> – Certified by Kementerian Ketenagakerjaan RI (Mutiara Mutu Sertifikasi)</li>
+      <li>🤖 <strong>Artificial Intelligence Mastery Program</strong> – MSIB Kampus Merdeka</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ORGANIZATION -->
+<section id="organization">
+  <div class="container">
+    <span class="section-title">Organization & Leadership</span>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <h3>Electrical Control Technique Laboratory</h3>
+        <span class="date">September 2021 – September 2023</span>
+      </div>
+      <p class="exp-role">Laboratory Assistant, Universitas Lampung</p>
+      <ul>
+        <li>Supervised experiments in advanced control systems (PLC, Relay, Touch/Light/Sound switches) for 40 students.</li>
+        <li>Supported basic control system experiments including PWM and PID Control for 126 students.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <h3>Himpunan Mahasiswa Teknik Elektro (HIMATRO)</h3>
+        <span class="date">2020 – 2021</span>
+      </div>
+      <p class="exp-role">Pengabdian Masyarakat Division</p>
+      <ul>
+        <li>Led solar-powered lamp installation in Pancoran Village, Kalianda (EGOV program), achieving 100% project completion.</li>
+        <li>Delivered electrical engineering presentations and educational sessions across 10 schools.</li>
+        <li>Organized photography and videography workshops for 103–128 participants at Himatro Image Workshop and Himatro Arts Festival.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Luthfi Ardiansyah &nbsp;|&nbsp; <a href="https://linkedin.com/in/luthfiardiansyah272" target="_blank">linkedin.com/in/luthfiardiansyah272</a></p>
+</footer>
+
+</body>
+</html>
