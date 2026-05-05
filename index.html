@@ -450,27 +450,6 @@
     /* ORGANIZATION */
     #organization { background: var(--white); }
 
-    /* MORE ON ME badges */
-    #more-on-me { background: var(--bg); padding: 3rem 2rem; }
-    .more-badges {
-      display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center;
-    }
-    .more-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--white); border: 1.5px solid #e2e8f0;
-      border-radius: 30px; padding: 0.5rem 1.1rem;
-      font-size: 0.85rem; font-weight: 600; color: var(--navy);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-    }
-    .more-badge:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(46,116,181,0.15);
-      border-color: var(--blue);
-    }
-    .more-badge svg { flex-shrink: 0; }
-    .more-badge.accent { background: var(--light-blue); border-color: var(--blue); color: var(--navy); }
-
     /* FOOTER */
     footer {
       background: var(--navy); color: rgba(255,255,255,0.7);
@@ -495,6 +474,20 @@
       .avatar-wrap { width: 200px; height: 200px; }
       .avatar { width: 200px; height: 200px; }
     }
+    /* More on Me button */
+    .btn-more-on-me {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      color: rgba(255,255,255,0.6); font-size: 0.82rem; font-weight: 500;
+      text-decoration: none; margin-top: 1rem;
+      transition: color .2s, transform .2s;
+      animation: fadeInUp 0.8s ease 1.1s both;
+    }
+    .btn-more-on-me svg { animation: bounce 2s ease-in-out infinite; }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(5px); }
+    }
+    .btn-more-on-me:hover { color: rgba(255,255,255,0.95); transform: translateY(2px); }
   </style>
 </head>
 <body>
@@ -727,68 +720,16 @@
               CV &ndash; Palembang
             </a>
           </div>
+      <a href="#summary" class="btn-more-on-me">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        More on Me
+      </a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MORE ON ME -->
-<section id="more-on-me">
-  <div class="container">
-    <span class="section-title">More on Me</span>
-    <div class="more-badges">
-      <span class="more-badge accent">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        S1 Teknik Elektro &ndash; Unila
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-        Production Engineer
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg>
-        IoT &amp; Sensor Systems
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        TPM &amp; Predictive Maintenance
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        SCADA &amp; PLC
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        Python &amp; Data Analytics
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        Cross-Functional Collaboration
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        GPA 3.50 / 4.00
-      </span>
-      <span class="more-badge accent">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Ahli K3 Umum
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        Odoo &amp; ERP Systems
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6s2-2 5-2 5 2 5 2 2-2 5-2 5 2 5 2v14s-2-2-5-2-5 2-5 2-2-2-5-2-5 2-5 2V6z"/></svg>
-        Indonesian &amp; English
-      </span>
-      <span class="more-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Lampung / Palembang
-      </span>
-    </div>
-  </div>
-</section>
 
 <!-- SUMMARY -->
 <section id="summary">
