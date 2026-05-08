@@ -553,46 +553,6 @@
       display: block;
     }
 
-    /* Language Toggle */
-    .language-toggle {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 6px;
-      padding: 0.4rem 0.8rem;
-      cursor: pointer;
-      color: rgba(255,255,255,0.85);
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .language-toggle:hover {
-      background: rgba(255,255,255,0.15);
-      color: var(--white);
-    }
-    .language-toggle .flag {
-      width: 16px;
-      height: 12px;
-      border-radius: 2px;
-      display: inline-block;
-    }
-    .flag.id {
-      background: linear-gradient(to bottom, #ff0000 50%, #ffffff 50%);
-    }
-    .flag.en {
-      background: linear-gradient(45deg, #012169 25%, transparent 25%), 
-                  linear-gradient(-45deg, #012169 25%, transparent 25%), 
-                  linear-gradient(45deg, transparent 75%, #012169 75%), 
-                  linear-gradient(-45deg, transparent 75%, #012169 75%);
-      background-size: 4px 4px;
-      background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
-      background-color: #ffffff;
-    }
-
     /* Dark mode adjustments */
     [data-theme="dark"] nav {
       background: rgba(15,23,42,0.97);
@@ -723,12 +683,12 @@
     </svg>
   </div>
   <ul>
-    <li><a href="#summary" data-en="About" data-id="Tentang">About</a></li>
-    <li><a href="#experience" data-en="Experience" data-id="Pengalaman">Experience</a></li>
-    <li><a href="#projects" data-en="Projects" data-id="Proyek">Projects</a></li>
-    <li><a href="#skills" data-en="Skills" data-id="Keahlian">Skills</a></li>
-    <li><a href="#education" data-en="Education" data-id="Pendidikan">Education</a></li>
-    <li><a href="#certifications" data-en="Certs" data-id="Sertifikat">Certs</a></li>
+    <li><a href="#summary">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certs</a></li>
     <li>
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
         <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -738,12 +698,6 @@
         <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
-      </button>
-    </li>
-    <li>
-      <button id="languageToggle" class="language-toggle" aria-label="Toggle language">
-        <span class="flag en" id="currentFlag"></span>
-        <span id="currentLang">EN</span>
       </button>
     </li>
   </ul>
@@ -895,15 +849,15 @@
         <span>&#128161; Digital Innovation</span>
         <span><svg width="13" height="13" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:3px"><rect x="9" y="9" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1" fill="currentColor" opacity="0.6"/><line x1="4" y1="13" x2="9" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="19" x2="9" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="23" y1="13" x2="28" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="23" y1="19" x2="28" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="4" x2="13" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="19" y1="4" x2="19" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="23" x2="13" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="19" y1="23" x2="19" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> <span>IoT &amp; Automation</span></span>
       </div>
-      <p class="tagline">data-en="Electrical Engineering &middot; Sensor Systems &middot; TPM &middot; Operational Excellence"</p>
+      <p class="tagline">Electrical Engineering • Sensor Systems • TPM • Operational Excellence</p>
       <div class="hero-stats">
         <div class="stat-item">
           <span class="stat-num">2+</span>
-          <span class="stat-label" data-en="Years Exp." data-id="Thn Pengalaman">Years Exp.</span>
+          <span class="stat-label">Years Exp.</span>
         </div>
         <div class="stat-item">
           <span class="stat-num">4</span>
-          <span class="stat-label" data-en="Sites Deployed" data-id="Lokasi Deploy">Sites Deployed</span>
+          <span class="stat-label">Sites Deployed</span>
         </div>
       </div>
       <div class="contact-bar">
@@ -943,17 +897,16 @@
       </div>
       <a href="#summary" class="btn-more-on-me">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        <span data-en="More on Me" data-id="Lebih Tentang Saya">More on Me</span>
+        <span>More on Me</span>
       </a>
     </div>
   </div>
 </section>
 
-
 <!-- SUMMARY -->
 <section id="summary">
   <div class="container">
-    <span class="section-title" data-en="About Me" data-id="Tentang Saya">About Me</span>
+    <span class="section-title">About Me</span>
     <pElectrical Engineering graduate with proven experience in production system digitalization, equipment reliability, and maintenance engineering within FMCG agribusiness operations. Demonstrated impact in cost reduction exceeding IDR 1.2B/year, multi-site system deployment, and TPM implementation across multiple business units."
     >Electrical Engineering graduate with proven experience in production system digitalization, equipment reliability, and maintenance engineering within FMCG agribusiness operations. Demonstrated impact in cost reduction exceeding IDR 1.2B/year, multi-site system deployment, and TPM implementation across multiple business units.">Electrical Engineering graduate with proven experience in production system digitalization, equipment reliability, and maintenance engineering within FMCG agribusiness operations. Demonstrated impact in cost reduction exceeding <strong>IDR 1.2B/year</strong>, multi-site system deployment, and TPM implementation across multiple business units.</p>
     <pStrong in systems thinking, problem solving, and operational execution — with hands-on involvement from development and pilot through to full implementation. Highly driven to grow as a Production or Maintenance Engineer, with a focus on operational excellence and continuous improvement."
@@ -964,7 +917,7 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
-    <span class="section-title" data-en="Work Experience" data-id="Pengalaman Kerja">Work Experience</span>
+    <span class="section-title">Work Experience</span>
 
     <div class="exp-card">
       <div class="exp-header">
@@ -1015,7 +968,7 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
-    <span class="section-title" data-en="Key Projects" data-id="Proyek Utama">Key Projects</span>
+    <span class="section-title" data-id="Proyek Utama">Key Projects</span>
 
     <p style="font-weight:600; color:var(--navy); margin-bottom:1rem;">💼 Work Projects</p>
     <div class="projects-grid" style="margin-bottom:2.5rem;">
@@ -1105,7 +1058,7 @@
     <span class="section-title">Skills & Tools</span>
     <table class="skills-table">
       <tr>
-        <td data-en="Technical" data-id="Teknis">Technical</td>
+        <td data-id="Teknis">Technical</td>
         <td>Production System Implementation, Sensor-Based Monitoring, PLC, PWM, PID Control, UAT, TPM</td>
       </tr>
       <tr>
@@ -1113,12 +1066,12 @@
         <td>Odoo, Python, VS Code, Google Colab, Canva, Figma, MS Office (Word, Excel, PowerPoint)</td>
       </tr>
       <tr>
-        <td data-en="Soft Skills" data-id="Soft Skills">Soft Skills</td>
+        <td data-id="Soft Skills">Soft Skills</td>
         <td>Cross-Functional Collaboration, Problem Solving, Operational Execution, Performance Monitoring, User Training</td>
       </tr>
       <tr>
-        <td data-en="Languages" data-id="Bahasa">Languages</td>
-        <td>data-en="Indonesian (Native) &nbsp;|&nbsp; English (Professional Working Proficiency)">Indonesian (Native) &nbsp;|&nbsp; English (Professional Working Proficiency)</td>
+        <td data-id="Bahasa">Languages</td>
+        <td>Indonesian (Native) &nbsp;|&nbsp; English (Professional Working Proficiency)</td>
       </tr>
     </table>
   </div>
@@ -1127,7 +1080,7 @@
 <!-- EDUCATION -->
 <section id="education">
   <div class="container">
-    <span class="section-title" data-en="Education" data-id="Pendidikan">Education</span>
+    <span class="section-title" data-id="Pendidikan">Education</span>
     <div class="edu-card">
       <h3>Universitas Lampung</h3>
       <p class="degree">Bachelor's Degree in Electrical Engineering</p>
@@ -1140,7 +1093,7 @@
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="container">
-    <span class="section-title" data-en="Certifications &amp; Training" data-id="Sertifikasi &amp; Pelatihan">Certifications &amp; Training</span>
+    <span class="section-title" data-id="Sertifikasi &amp; Pelatihan">Certifications &amp; Training</span>
     <div class="cert-grid">
 
       <div class="cert-card" onclick="openCert('certificate/1. Sertifikat AK3U_13.pdf','Ahli K3 Umum')">
@@ -1254,9 +1207,8 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>data-en="© 2025 Luthfi Ardiansyah">© 2025 Luthfi Ardiansyah &nbsp;|&nbsp; <a href="https://linkedin.com/in/luthfiardiansyah272" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp;|&nbsp; <a href="https://github.com/luthfiardiansyah272" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+  <p>© 2025 Luthfi Ardiansyah &nbsp;|&nbsp; <a href="https://linkedin.com/in/luthfiardiansyah272" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp;|&nbsp; <a href="https://github.com/luthfiardiansyah272" target="_blank" rel="noopener noreferrer">GitHub</a></p>
 </footer>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
@@ -1270,54 +1222,11 @@
   });
 
   // Language switcher functionality
-  const languageToggle = document.getElementById('languageToggle');
-  const currentFlag = document.getElementById('currentFlag');
-  const currentLang = document.getElementById('currentLang');
-  let currentLanguage = localStorage.getItem('lang') || 'en';
-  
+          
   // Set initial language
-  setLanguage(currentLanguage);
-
-  languageToggle.addEventListener('click', function() {
-    const newLanguage = currentLanguage === 'en' ? 'id' : 'en';
-    setLanguage(newLanguage);
-  });
-
-  function setLanguage(lang) {
-    currentLanguage = lang;
-    
-    // Update flag and text
-    if (lang === 'id') {
-      currentFlag.className = 'flag id';
-      currentLang.textContent = 'ID';
-      document.documentElement.setAttribute('lang', 'id');
-    } else {
-      currentFlag.className = 'flag en';
-      currentLang.textContent = 'EN';
-      document.documentElement.setAttribute('lang', 'en');
-    }
-    
-    // Update all elements with language attributes
-    document.querySelectorAll('[data-en][data-id]').forEach(function(element) {
-      const text = element.getAttribute('data-' + lang);
-      if (text) {
-        element.textContent = text;
-      }
-    });
-    
-    // Update meta tags for SEO
-    if (lang === 'id') {
-      document.title = 'Luthfi Ardiansyah – Production Engineer | Spesialis Inovasi Digital';
-      document.querySelector('meta[name="description"]').content = 'Luthfi Ardiansyah - Production Engineer yang mengkhususkan diri dalam inovasi digital, sistem IoT, dan keunggulan operasional. Rekam jejak terbukti dalam pengurangan biaya dan implementasi sistem.';
-    } else {
-      document.title = 'Luthfi Ardiansyah – Production Engineer | Digital Innovation Specialist';
-      document.querySelector('meta[name="description"]').content = 'Luthfi Ardiansyah - Production Engineer specializing in digital innovation, IoT systems, and operational excellence. Proven track record in cost reduction and system implementation.';
-    }
-    
-    // Store language preference
-    localStorage.setItem('lang', lang);
-  }
-
+  
+  
+  
 
   const themeToggle = document.getElementById('themeToggle');
   const currentTheme = localStorage.getItem('theme') || 'light';
@@ -1466,10 +1375,6 @@
   }
 </script>
 
-
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -1480,55 +1385,6 @@
       document.getElementById('loadingOverlay').classList.add('hidden');
     }, 800);
   });
-
-  // Language switcher functionality
-  const languageToggle = document.getElementById('languageToggle');
-  const currentFlag = document.getElementById('currentFlag');
-  const currentLang = document.getElementById('currentLang');
-  let currentLanguage = localStorage.getItem('lang') || 'en';
-  
-  // Set initial language
-  setLanguage(currentLanguage);
-
-  languageToggle.addEventListener('click', function() {
-    const newLanguage = currentLanguage === 'en' ? 'id' : 'en';
-    setLanguage(newLanguage);
-  });
-
-  function setLanguage(lang) {
-    currentLanguage = lang;
-    
-    // Update flag and text
-    if (lang === 'id') {
-      currentFlag.className = 'flag id';
-      currentLang.textContent = 'ID';
-      document.documentElement.setAttribute('lang', 'id');
-    } else {
-      currentFlag.className = 'flag en';
-      currentLang.textContent = 'EN';
-      document.documentElement.setAttribute('lang', 'en');
-    }
-    
-    // Update all elements with language attributes
-    document.querySelectorAll('[data-en][data-id]').forEach(function(element) {
-      const text = element.getAttribute('data-' + lang);
-      if (text) {
-        element.textContent = text;
-      }
-    });
-    
-    // Update meta tags for SEO
-    if (lang === 'id') {
-      document.title = 'Luthfi Ardiansyah – Production Engineer | Spesialis Inovasi Digital';
-      document.querySelector('meta[name="description"]').content = 'Luthfi Ardiansyah - Production Engineer yang mengkhususkan diri dalam inovasi digital, sistem IoT, dan keunggulan operasional. Rekam jejak terbukti dalam pengurangan biaya dan implementasi sistem.';
-    } else {
-      document.title = 'Luthfi Ardiansyah – Production Engineer | Digital Innovation Specialist';
-      document.querySelector('meta[name="description"]').content = 'Luthfi Ardiansyah - Production Engineer specializing in digital innovation, IoT systems, and operational excellence. Proven track record in cost reduction and system implementation.';
-    }
-    
-    // Store language preference
-    localStorage.setItem('lang', lang);
-  }
 
   // Dark mode toggle
   const themeToggle = document.getElementById('themeToggle');
