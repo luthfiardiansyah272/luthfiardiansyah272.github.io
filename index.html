@@ -747,10 +747,6 @@
       </button>
     </li>
   </ul>
-  <div class="lang-switch">
-    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" id="btn-id" onclick="setLang('id')">ID</button>
-  </div>
 </nav>
 
 <!-- HERO -->
@@ -1274,7 +1270,53 @@
   });
 
   // Language switcher functionality
+  const languageToggle = document.getElementById('languageToggle');
+  const currentFlag = document.getElementById('currentFlag');
+  const currentLang = document.getElementById('currentLang');
+  let currentLanguage = localStorage.getItem('lang') || 'en';
   
+  // Set initial language
+  setLanguage(currentLanguage);
+
+  languageToggle.addEventListener('click', function() {
+    const newLanguage = currentLanguage === 'en' ? 'id' : 'en';
+    setLanguage(newLanguage);
+  });
+
+  function setLanguage(lang) {
+    currentLanguage = lang;
+    
+    // Update flag and text
+    if (lang === 'id') {
+      currentFlag.className = 'flag id';
+      currentLang.textContent = 'ID';
+      document.documentElement.setAttribute('lang', 'id');
+    } else {
+      currentFlag.className = 'flag en';
+      currentLang.textContent = 'EN';
+      document.documentElement.setAttribute('lang', 'en');
+    }
+    
+    // Update all elements with language attributes
+    document.querySelectorAll('[data-en][data-id]').forEach(function(element) {
+      const text = element.getAttribute('data-' + lang);
+      if (text) {
+        element.textContent = text;
+      }
+    });
+    
+    // Update meta tags for SEO
+    if (lang === 'id') {
+      document.title = 'Luthfi Ardiansyah – Production Engineer | Spesialis Inovasi Digital';
+      document.querySelector('meta[name="description"]').content = 'Luthfi Ardiansyah - Production Engineer yang mengkhususkan diri dalam inovasi digital, sistem IoT, dan keunggulan operasional. Rekam jejak terbukti dalam pengurangan biaya dan implementasi sistem.';
+    } else {
+      document.title = 'Luthfi Ardiansyah – Production Engineer | Digital Innovation Specialist';
+      document.querySelector('meta[name="description"]').content = 'Luthfi Ardiansyah - Production Engineer specializing in digital innovation, IoT systems, and operational excellence. Proven track record in cost reduction and system implementation.';
+    }
+    
+    // Store language preference
+    localStorage.setItem('lang', lang);
+  }
 
 
   const themeToggle = document.getElementById('themeToggle');
@@ -1428,24 +1470,131 @@
 
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
-  /* ── Language Switch ── */
-  function setLang(lang) {
-    document.querySelectorAll('[data-en]').forEach(function(el) {
-      var val = el.getAttribute('data-' + lang);
-      if (val !== null) el.innerHTML = val;
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  // Loading animation
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.getElementById('loadingOverlay').classList.add('hidden');
+    }, 800);
+  });
+
+  // Language switcher functionality
+  const languageToggle = document.getElementById('languageToggle');
+  const currentFlag = document.getElementById('currentFlag');
+  const currentLang = document.getElementById('currentLang');
+  let currentLanguage = localStorage.getItem('lang') || 'en';
+  
+  // Set initial language
+  setLanguage(currentLanguage);
+
+  languageToggle.addEventListener('click', function() {
+    const newLanguage = currentLanguage === 'en' ? 'id' : 'en';
+    setLanguage(newLanguage);
+  });
+
+  function setLanguage(lang) {
+    currentLanguage = lang;
+    
+    // Update flag and text
+    if (lang === 'id') {
+      currentFlag.className = 'flag id';
+      currentLang.textContent = 'ID';
+      document.documentElement.setAttribute('lang', 'id');
+    } else {
+      currentFlag.className = 'flag en';
+      currentLang.textContent = 'EN';
+      document.documentElement.setAttribute('lang', 'en');
+    }
+    
+    // Update all elements with language attributes
+    document.querySelectorAll('[data-en][data-id]').forEach(function(element) {
+      const text = element.getAttribute('data-' + lang);
+      if (text) {
+        element.textContent = text;
+      }
     });
-    var btnEn = document.getElementById('btn-en');
-    var btnId = document.getElementById('btn-id');
-    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
-    if (btnId) btnId.classList.toggle('active', lang === 'id');
-    document.documentElement.lang = lang === 'id' ? 'id' : 'en';
+    
+    // Update meta tags for SEO
+    if (lang === 'id') {
+      document.title = 'Luthfi Ardiansyah – Production Engineer | Spesialis Inovasi Digital';
+      document.querySelector('meta[name="description"]').content = 'Luthfi Ardiansyah - Production Engineer yang mengkhususkan diri dalam inovasi digital, sistem IoT, dan keunggulan operasional. Rekam jejak terbukti dalam pengurangan biaya dan implementasi sistem.';
+    } else {
+      document.title = 'Luthfi Ardiansyah – Production Engineer | Digital Innovation Specialist';
+      document.querySelector('meta[name="description"]').content = 'Luthfi Ardiansyah - Production Engineer specializing in digital innovation, IoT systems, and operational excellence. Proven track record in cost reduction and system implementation.';
+    }
+    
+    // Store language preference
     localStorage.setItem('lang', lang);
   }
 
-  /* ── PDF Certificates ── */
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  // Dark mode toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  
+  if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  themeToggle.addEventListener('click', function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+
+  // Scroll progress indicator
+  window.addEventListener('scroll', function() {
+    const scrollProgress = document.getElementById('scrollProgress');
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    
+    scrollProgress.style.width = scrollPercent + '%';
+  });
+
+  // Smooth scroll for navigation links
+  document.querySelectorAll('nav a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offsetTop = target.offsetTop - 60; // Account for fixed nav
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Enhanced animations on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe elements for animation
+  document.querySelectorAll('.exp-card, .project-card, .cert-card, .edu-card').forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // PDF Certificate functionality
   document.querySelectorAll('canvas[data-pdf]').forEach(function(canvas) {
     var pdfUrl = canvas.getAttribute('data-pdf');
     var loading = canvas.previousElementSibling;
@@ -1465,54 +1614,68 @@
     });
   });
 
+  // Certificate modal functions
   function openCert(url, title) {
     document.getElementById('certModalTitle').textContent = title;
     document.getElementById('certModalFrame').src = url;
     document.getElementById('certModal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
+  
   function closeCert() {
     document.getElementById('certModal').classList.remove('open');
     document.getElementById('certModalFrame').src = '';
     document.body.style.overflow = '';
   }
+  
   function closeCertOnBg(e) {
     if (e.target === document.getElementById('certModal')) closeCert();
   }
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeCert(); });
-
-  /* ── Init on load ── */
-  window.addEventListener('DOMContentLoaded', function() {
-    var saved = localStorage.getItem('lang') || 'en';
-    setLang(saved);
-
-    /* Scroll progress */
-    window.addEventListener('scroll', function() {
-      var sp = document.getElementById('scrollProgress');
-      if (sp) {
-        var pct = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        sp.style.width = pct + '%';
-      }
-    });
-
-    /* Loading overlay */
-    setTimeout(function() {
-      var lo = document.getElementById('loadingOverlay');
-      if (lo) lo.classList.add('hidden');
-    }, 600);
-
-    /* Scroll-reveal cards */
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.exp-card,.project-card,.cert-card,.edu-card').forEach(function(el) {
-      el.style.opacity='0'; el.style.transform='translateY(20px)';
-      el.style.transition='opacity 0.6s ease, transform 0.6s ease';
-      obs.observe(el);
-    });
+  
+  document.addEventListener('keydown', function(e) { 
+    if (e.key === 'Escape') closeCert(); 
   });
+
+  // Enhanced mobile navigation
+  let lastScrollTop = 0;
+  const nav = document.querySelector('nav');
+  
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // Scrolling down
+      nav.style.transform = 'translateY(-100%)';
+    } else {
+      // Scrolling up
+      nav.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+
+  // Add transition to nav
+  nav.style.transition = 'transform 0.3s ease';
+
+  // Performance optimization: Lazy load images
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+            imageObserver.unobserve(img);
+          }
+        }
+      });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(function(img) {
+      imageObserver.observe(img);
+    });
+  }
 </script>
 
 </body>
